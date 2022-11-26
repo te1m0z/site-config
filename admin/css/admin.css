@@ -1,0 +1,18 @@
+#global-config-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#global-config-container .part {
+    flex-grow: 1;
+    flex-basis: 300px;
+    height: 100%;
+    width: 50%;
+    flex-shrink: 300px;
+    
+    border: 1px solid red;
+}
+
+#global-config-container .part .add-icon::before {
+    content: "\f132";
+}
