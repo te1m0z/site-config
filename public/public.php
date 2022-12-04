@@ -7,10 +7,10 @@ class Global_Config_Public {
 
     private $version;
 
-    public function __construct( $plugin_name, $version )
+    public function __construct()
     {
-        $this->plugin_name = $plugin_name;
-        $this->version     = $version;
+        $this->plugin_name = glcnf()->get_plugin_name();
+        $this->version     = glcnf()->get_version();
     }
 
     public function enqueue_styles()
