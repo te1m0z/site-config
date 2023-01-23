@@ -1,9 +1,22 @@
 import { createStore } from 'vuex'
 
 export default createStore({
-    state: {},
-    getters: {},
+    state: {
+        groups: [],
+        settings: []
+    },
     mutations: {},
-    actions: {},
-    modules: {}
+    actions: {
+        async updateGroups(state) {
+
+        },
+        addGroup(state, newGroup) {
+
+        }
+    },
+    getters: {
+        allGroups(state) {
+            return state.groups
+        }
+    }
 })

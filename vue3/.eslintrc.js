@@ -8,5 +8,6 @@ module.exports = {
         'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
         "indent": ["error", 4],
         "semi": [2, "never"],
+        "space-before-function-paren": ["error", "never"]
     }
 }

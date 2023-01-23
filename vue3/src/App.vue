@@ -1,14 +1,15 @@
 <template>
-    <router-link to="/">home</router-link>
-    <router-link to="/about">about</router-link>
-    <router-view v-slot="{ Component }">
-        <Transition name="fade-comp" mode="out-in">
-            <component :is="Component"/>
-        </Transition>
-    </router-view>
+    <AppHeader/>
+    <div class="container">
+        <router-view v-slot="{ Component }">
+            <Transition name="fade-comp" mode="out-in">
+                <component :is="Component"/>
+            </Transition>
+        </router-view>
+    </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .fade-comp-enter,
 .fade-comp-leave {
     &-active {
@@ -32,3 +33,14 @@
     transform: translateY(15px);
 }
 </style>
+
+<script>
+import AppHeader from '@/components/layout/AppHeader.vue'
+
+export default {
+    name: 'App',
+    components: {
+        AppHeader
+    }
+}
+</script>
