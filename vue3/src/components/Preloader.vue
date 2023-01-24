@@ -13,17 +13,16 @@ export default {
 <style lang="scss" scoped>
 .loader {
     margin-top: 40px;
-    margin-left: auto;
-    margin-right: auto;
     @media (max-width: 768px) {
         margin-top: 20px;
     }
 }
 
 .spinner {
+    display: block;
+    margin: 0 auto;
     width: 48px;
     height: 48px;
-    display: inline-block;
     position: relative;
 
     &::before,

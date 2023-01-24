@@ -9,3 +9,12 @@
 ul, ol {
   list-style: none;
 }
+
+input,
+select,
+textarea,
+button {
+  background: transparent;
+  border: none;
+  outline: none;
+}

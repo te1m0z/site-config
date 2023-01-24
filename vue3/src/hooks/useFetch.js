@@ -1,4 +1,4 @@
-export const useFetch = async (data) => {
+export const useFetch = async ( data ) => {
 
     const state = {
         isLoading: true,
@@ -9,16 +9,20 @@ export const useFetch = async (data) => {
 
     try {
         state.isLoading = true
-        await fetch('/wp-ajax.php', {
-            cache: false,
-            body: JSON.stringify(data)
-        })
-            .then(res => {
-                if (!res.success) {
-                    state.isError = true
-                    state.errorMessage = res.statusMessage
-                }
-            })
+        state.data = {
+            success: true,
+            groups: []
+        }
+        // await fetch( '/wp-ajax.php', {
+        //     cache: false,
+        //     body: JSON.stringify( data )
+        // } )
+        //     .then( res => {
+        //         if (!res.success) {
+        //             state.isError = true
+        //             state.errorMessage = res.statusMessage
+        //         }
+        //     } )
     } catch (err) {
         state.isError = true
         state.errorMessage = 'Ошибка сервера'
