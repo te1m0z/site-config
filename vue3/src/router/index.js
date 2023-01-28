@@ -1,23 +1,29 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-import AboutView from '@/views/AboutView.vue'
+import HomeScreen from '@/screens/HomeScreen.vue'
+import NoGroupsScreen from '@/screens/NoGroupsScreen.vue'
+import CreateGroupView from '@/screens/CreateGroupScreen.vue'
 
 const routes = [
     {
         path: '/',
-        name: 'HomeView',
-        component: HomeView
+        name: 'HomeScreen',
+        component: HomeScreen
     },
     {
-        path: '/about',
-        name: 'AboutView',
-        component: AboutView
+        path: '/no-groups',
+        name: 'NoGroupsScreen',
+        component: NoGroupsScreen
+    },
+    {
+        path: '/create-group',
+        name: 'CreateGroupView',
+        component: CreateGroupView
     }
 ]
 
-const router = createRouter({
-    history: createWebHashHistory(process.env.BASE_URL),
+const router = createRouter( {
+    history: createWebHashHistory( process.env.BASE_URL ),
     routes
-})
+} )
 
 export default router

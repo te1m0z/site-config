@@ -1,0 +1,24 @@
+// Анмаиция слева на право для компонента
+
+.slide-left-enter,
+.slide-left-leave {
+  &-active {
+    transition: 500ms ease;
+  }
+}
+
+.slide-left-enter-to,
+.slide-left-leave-from {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.slide-left-enter-from {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.slide-left-leave-to {
+  opacity: 0;
+  transform: translateX(0px);
+}

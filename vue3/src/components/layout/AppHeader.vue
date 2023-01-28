@@ -2,7 +2,6 @@
     <header class="app-header">
         <div class="container">
             <h1>{{ title }}</h1>
-            <p>Documentation of usage</p>
         </div>
     </header>
 </template>

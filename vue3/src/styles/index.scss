@@ -1,2 +1,6 @@
 @import "./reset.scss";
 @import "./global.scss";
+
+// анимации компонентов
+@import "./transitions/fade-comp.scss";
+@import "./transitions/slide-left.scss";

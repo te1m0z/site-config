@@ -1,17 +1,25 @@
 <template>
-    <div class="groups-not-exists">
-        <p>У вас нет ни одной группы</p>
-        <AppButton>Создать</AppButton>
-    </div>
+    <ScreenAnimation type="top" class="groups-not-exists">
+        <template #header>
+            <TextMain>У вас нет ни одной группы</TextMain>
+        </template>
+        <template #text>
+            <AppLink to="/create-group">Создать</AppLink>
+        </template>
+    </ScreenAnimation>
 </template>
 
 <script>
-import AppButton from "@/components/UI/AppButton.vue";
+import AppLink from "@/components/UI/AppLink.vue";
+import TextMain from "@/components/UI/TextMain.vue";
+import ScreenAnimation from "@/hoc/ScreenAnimation.vue";
 
 export default {
     name: 'GroupsNotExists',
     components: {
-        AppButton
+        ScreenAnimation,
+        AppLink,
+        TextMain
     }
 }
 </script>
