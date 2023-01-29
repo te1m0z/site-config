@@ -1,4 +1,4 @@
-const {defineConfig} = require('@vue/cli-service')
+const { defineConfig } = require('@vue/cli-service')
 
 module.exports = defineConfig({
     transpileDependencies: true,
@@ -7,7 +7,16 @@ module.exports = defineConfig({
             .plugin('html')
             .tap(args => {
                 args[0].slug = process.env.VUE_APP_PLUGIN_SLUG
-                return args;
+                return args
             })
+    },
+    css: {
+        loaderOptions: {
+            sass: {
+                additionalData: `
+                    @import "@/styles/_variables.scss";
+                `
+            }
+        }
     }
-});
+})

@@ -1,27 +1,38 @@
 <template>
-    <ScreenAnimation type="right">
+    <ScreenAnimation type='right'>
 
-        <div class="first">
-            назад
-            <!--                <router-link :to="$router.options.history.state.back">Назад</router-link>-->
-        </div>
+        <ScreenHeader>
+            <GoPrevNextButton dir='prev' />
+        </ScreenHeader>
 
-        <div class="second">
-            CreateGroupView
-        </div>
+        <template #second>
+            <div class='form-wrapper'>
+                <CreateGroupForm />
+            </div>
+        </template>
 
     </ScreenAnimation>
 </template>
 
 <script>
-import ScreenAnimation from "@/hoc/ScreenAnimation.vue";
+import ScreenAnimation from '@/hoc/ScreenSectionsAnimation.vue'
+import CreateGroupForm from '@/components/forms/CreateGroupForm.vue'
+import GoPrevNextButton from '@/components/UI/GoPrevNextButton.vue'
+import ScreenHeader from '@/components/layout/ScreenHeader.vue'
 
 export default {
-    name: "CreateGroupView",
-    components: { ScreenAnimation }
+    name: 'CreateGroupView',
+    components: {
+        GoPrevNextButton,
+        CreateGroupForm,
+        ScreenAnimation,
+        ScreenHeader
+    }
 }
 </script>
 
 <style scoped>
-
+.form-wrapper {
+    margin-top: 20px;
+}
 </style>

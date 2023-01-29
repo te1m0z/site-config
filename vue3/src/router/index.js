@@ -1,7 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import HomeScreen from '@/screens/HomeScreen.vue'
 import NoGroupsScreen from '@/screens/NoGroupsScreen.vue'
-import CreateGroupView from '@/screens/CreateGroupScreen.vue'
+import CreateGroupScreen from '@/screens/CreateGroupScreen.vue'
 
 const routes = [
     {
@@ -16,9 +16,14 @@ const routes = [
     },
     {
         path: '/create-group',
-        name: 'CreateGroupView',
-        component: CreateGroupView
-    }
+        name: 'CreateGroupScreen',
+        component: CreateGroupScreen
+    },
+    // {
+    //     path: '/:catchAll(.*)*',
+    //     name: "PageNotFound",
+    //     component: PageNotFound,
+    // },
 ]
 
 const router = createRouter( {

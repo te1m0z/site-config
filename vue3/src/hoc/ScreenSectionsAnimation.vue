@@ -1,28 +1,26 @@
 <template>
-    <transition-group
+    <TransitionGroup
         appear
-        tag="div"
-        :css="false"
-        @enter="onEnter"
+        tag='div'
+        :css='false'
+        mode='out-in'
+        @enter='onEnter'
+        class='screen-sections'
     >
-        <div
-            v-for="(slot, name, index) in $slots"
-            :key="name"
-            :data-index="index"
-        >
-            {{ slot.name }}
-            <slot :name="name"></slot>
-        </div>
-    </transition-group>
+        <slot></slot>
+    </TransitionGroup>
 </template>
 
 <script>
 import gsap from 'gsap'
 
 export default {
-    name: "ScreenAnimation",
+    name: 'ScreenSectionsAnimation',
     props: {
-        type: String
+        type: String,
+        className: {
+            type: String
+        }
     },
     data() {
         return {
@@ -36,7 +34,7 @@ export default {
             },
             right: {
                 from: {
-                    x: '+=60'
+                    x: '+=30'
                 },
                 to: {
                     x: '0'
@@ -52,18 +50,17 @@ export default {
             },
             bottom: {
                 from: {
-                    y: '+=30'
+                    y: '+=15'
                 },
                 to: {
                     y: '0'
                 }
-
             }
         }
     },
     methods: {
-        onEnter( el, done ) {
-            gsap.fromTo( el, {
+        onEnter(el, done) {
+            gsap.fromTo(el, {
                 opacity: 0,
                 ...this[this.type].from
             }, {
@@ -71,8 +68,17 @@ export default {
                 delay: el.dataset.index * 0.3,
                 onComplete: done,
                 ...this[this.type].to
-            } )
+            })
         }
     }
 }
 </script>
+
+<style lang='scss'>
+.screen-sections {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    width: 100%;
+}
+</style>

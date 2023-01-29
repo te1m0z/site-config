@@ -4,7 +4,10 @@
 
 <script>
 export default {
-    name: "ContentMain"
+    name: 'PrevLink',
+    setup() {
+
+    }
 }
 </script>
 

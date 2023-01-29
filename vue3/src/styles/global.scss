@@ -16,3 +16,27 @@ body {
 p {
   color: #747474;
 }
+
+button {
+  cursor: pointer;
+}
+
+form {
+  padding: 20px 40px;
+}
+
+input,
+textarea,
+select,
+img,
+button {
+  width: 100%;
+}
+
+input,
+textarea,
+select,
+button,
+a {
+  transition: 300ms ease;
+}

@@ -1,8 +1,15 @@
 <template>
     <AppHeader />
-    <div class='container'>
+    <div class='container screen-wrapper'>
         <router-view v-slot='{ Component, route }'>
-            <component :is='Component' :key='route.name' />
+            <Transition
+                appear
+                :css='false'
+                mode='out-in'
+                @leave='onLeave'
+            >
+                <component :is='Component' :key='route.name' />
+            </Transition>
         </router-view>
     </div>
 </template>
@@ -15,6 +22,22 @@ export default {
     name: 'App',
     components: {
         AppHeader
+    },
+    methods: {
+        onLeave(el, done) {
+            gsap.to(el, {
+                y: '+=15',
+                opacity: 0,
+                onComplete: done
+            })
+        }
     }
 }
 </script>
+
+
+<style lang='scss' scoped>
+.screen-wrapper {
+    margin-top: 70px;
+}
+</style>

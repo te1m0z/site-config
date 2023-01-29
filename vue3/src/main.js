@@ -7,6 +7,12 @@ import './styles/index.scss'
 
 const app = createApp(App)
 
+// app.use({
+//     install() {
+//         this.helpers = ''
+//     }
+// })
+
 app.use(store)
 app.use(router)
 
