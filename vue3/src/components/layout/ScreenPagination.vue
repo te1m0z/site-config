@@ -1,13 +1,15 @@
 <template>
     <div class='screen-pagination' data-index='0'>
-<!--        <RouterLink :to='$router.go(-1)' class='app-link small'>Prev</RouterLink>-->
-<!--        <RouterLink :to='$router.go(+1)' class='app-link small'>Next</RouterLink>-->
+        <RouterLink @click.native='goBack' to='/' class='app-link small'>Prev</RouterLink>
+        {{ prevRoute }}
+        <RouterLink @click.native='goForward' to='/' class='app-link small'>Next</RouterLink>
     </div>
 </template>
 
 <script>
 import AppLink from '@/components/UI/AppLink.vue'
-import { useRouter } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
+import { inject } from 'vue'
 
 export default {
     name: 'ScreenPagination',
@@ -20,17 +22,17 @@ export default {
     components: {
         AppLink
     },
-    methods: {
-        goBack() {
-            this.$router.go(-1)
-        },
-        goForward() {
-            this.$router.go(+1)
-        }
-    },
     setup() {
         const router = useRouter()
-        console.log(router.currentRoute.)
+
+        return {
+            goBack() {
+                router.back()
+            },
+            goForward() {
+                router.forward()
+            }
+        }
     }
 }
 </script>
@@ -40,6 +42,5 @@ export default {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    margin-bottom: 20px;
 }
 </style>

@@ -2,14 +2,12 @@
     <div class='no-groups-screen'>
         <ScreenSectionsAnimation type='bottom'>
 
-            <ScreenPagination />
-
             <ScreenHeader>У вас нет ни одной группы</ScreenHeader>
 
             <ScreenContent>
-<!--                <AppLink :to="{ name: 'CreateGroupScreen' }">-->
-<!--                    Создать-->
-<!--                </AppLink>-->
+                <AppLink :to="{ name: 'CreateGroupScreen' }">
+                    Создать
+                </AppLink>
             </ScreenContent>
 
         </ScreenSectionsAnimation>
@@ -21,7 +19,6 @@ import AppLink from '@/components/UI/AppLink.vue'
 import ScreenHeader from '@/components/layout/ScreenHeader.vue'
 import ScreenContent from '@/components/layout/ScreenContent.vue'
 import ScreenSectionsAnimation from '@/hoc/ScreenSectionsAnimation.vue'
-import ScreenPagination from '@/components/layout/ScreenPagination.vue'
 
 export default {
     name: 'NoGroupsScreen',
@@ -29,7 +26,6 @@ export default {
         AppLink,
         ScreenHeader,
         ScreenContent,
-        ScreenPagination,
         ScreenSectionsAnimation
     }
 }

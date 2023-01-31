@@ -18,7 +18,7 @@ const routes = [
         path: '/create-group',
         name: 'CreateGroupScreen',
         component: CreateGroupScreen
-    },
+    }
     // {
     //     path: '/:catchAll(.*)*',
     //     name: "PageNotFound",
@@ -26,9 +26,9 @@ const routes = [
     // },
 ]
 
-const router = createRouter( {
-    history: createWebHashHistory( process.env.BASE_URL ),
+const router = createRouter({
+    history: createWebHashHistory(process.env.BASE_URL),
     routes
-} )
+})
 
 export default router
